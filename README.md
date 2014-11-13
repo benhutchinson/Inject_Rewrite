@@ -14,7 +14,6 @@ This was the second weekend challenge set at Makers Academy.  The aim is to rewr
 
 [Visit Ruby Docs Here](http://www.ruby-doc.org/core-2.1.1/Enumerable.html#method-i-inject)
 
-
 ###Basic Functionality
 
 Inject initialises with a starting 'accumulator' value.  This defaults to the first item in the array, but can take a pre-set value (such as zero).  Inject will then iterate through each (subsequent) element in the array and performs a calculation on each iteration, defined by a block (e.g. accumulator could be incremented by the called element).  The accumulator value is then reset as the return of this calculation. Here is an example.  This would process the sum of all the elements.  The starting value has been defined as zero.
@@ -25,3 +24,7 @@ Inject initialises with a starting 'accumulator' value.  This defaults to the fi
 [1, 2, 3].inject(0) {|sum, x| sum + x }
 
 ```
+
+###My Code
+
+This works with arrays of integers currently.

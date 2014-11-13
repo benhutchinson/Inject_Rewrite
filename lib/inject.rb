@@ -1,19 +1,17 @@
 class Array
 
 attr_accessor :sum
-attr_accessor :iterator
+attr_accessor :counter
 
 def initialize
   @sum
   @counter
 end
 
-def set_starting_argument
-  @sum = self.first
-end
-
-def do_change(sum)
-  @sum = @sum * 2
+def do_change(element)
+  @sum = @sum + element.to_i
+  iterate
+  return if breaker
 end
 
 def iterate
@@ -24,35 +22,16 @@ def breaker
   self.count == @counter
 end
 
-
-def jab(sum = self[0])
-  @sum = sum
+def ben_inject(sum = nil)
+  @sum = sum.to_i
+  if !sum.nil?
+    self.each {|element| do_change(element) }
+  else 
+    @sum = self[0]
+    iterate 
+    self.drop(1).each {|element| do_change(element) }
+  end
+  @sum
 end
 
 end
-
-
-
-# arr = [1,2,3]
-
-
-
-# arr.set_starting_argument(arr)
-# @iterator += 1
-# arr.sum(do_change)
-
-# logic
-
-# take the starting element
-# run change on starting element
-# save result 
-# loop until there are no more elements
-
-
-
-# end
-
-
-
-# Example : Summing Numbers
-# [1, 2, 3, 4].inject(0) { |result, element| result + element } # => 10
