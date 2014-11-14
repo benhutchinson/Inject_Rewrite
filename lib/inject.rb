@@ -22,6 +22,9 @@ def breaker
   self.count == @counter
 end
 
+
+########################################################
+
 def ben_inject(sum = nil)
   @sum = sum.to_i
   if !sum.nil?
@@ -33,5 +36,22 @@ def ben_inject(sum = nil)
   end
   @sum
 end
+
+########################################################
+
+
+
+def v2_inject(sum = nil)
+  @sum = sum.to_i
+  if !sum.nil?
+    self.each {|element| @sum = yield(@sum, element) }
+  else 
+    @sum = self[0]
+    iterate 
+    self.drop(1).each {|element| @sum = yield(@sum, element) }
+  end
+  @sum
+end
+
 
 end
