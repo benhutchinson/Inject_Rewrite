@@ -27,5 +27,5 @@ Inject initialises with a starting 'accumulator' value.  This defaults to the fi
 
 ###My Code
 
-v1 : works with arrays of integers currently.  To change how it functions (i.e. offer more functionality than addition), the do_change method needs modifying.
-v2 : now a block can be passed with the v2_inject method in a similar format to the inject method.  i.e. arr.v2_inject {|sum, element| sum.to_i + element.to_i } offers same functionality, but could be adjusted on the fly.
+- v1 : works with arrays of integers currently.  To change how it functions (i.e. offer more functionality than addition), the do_change method needs modifying.
+- v2 : now a block can be passed with the v2_inject method in a similar format to the inject method.  i.e. arr.v2_inject {|sum, element| sum.to_i + element.to_i } offers same functionality, but could be adjusted on the fly.
