@@ -5,8 +5,6 @@ def initialize
 end
 
 ## this version will take a block as an argument
-## I have removed the .to_i so that this will
-## also function with strings.
 
 def v2_inject(sum = nil)
   @sum = sum
