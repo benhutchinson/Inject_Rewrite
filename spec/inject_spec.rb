@@ -13,7 +13,11 @@ describe "Ben's Inject Method" do
     end
 
     it 'should be able to modify all elements in an array' do 
-      expect([1,2,3].v2_inject {|sum, element| sum + element }).to be 6
+      arr = [1,2,3]
+      expect(arr.v2_inject {|sum, element| sum + element }).to be 6
+      expect(arr.v2_inject(&:+)).to be 6
+      # expect(arr.v2_inject(:+)).to be 6
+      expect(arr).to eq [1,2,3]
     end
 
     it "should function regardless of array length" do
